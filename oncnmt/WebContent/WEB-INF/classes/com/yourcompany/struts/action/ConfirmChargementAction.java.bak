@@ -1,0 +1,1047 @@
+
+package com.yourcompany.struts.action;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.RedirectingActionForward;
+import org.apache.struts.actions.DispatchAction;
+
+
+import com.yourcompany.struts.UtilBean.Confirmation;
+import com.yourcompany.struts.UtilBean.Scratch;
+import com.yourcompany.struts.UtilBean.Scratch2;
+import com.yourcompany.struts.UtilClass.Connexion;
+
+import com.yourcompany.struts.form.ActivationPreForm;
+import com.yourcompany.struts.form.ChargementForm;
+
+
+public class ConfirmChargementAction extends DispatchAction {
+
+	public ActionForward ouvrir(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws SQLException { 
+		
+		ChargementForm chargementForm = (ChargementForm) form;
+		
+		
+		Connexion connexion=new Connexion();
+		Connection con=connexion.createConnection();
+		
+		Statement st,st1,st2,st3,st4,st5 = null;
+		ResultSet rs,rs1,rs2,rs3,rs4,rs5 = null;
+		
+		st=con.createStatement();
+		st1=con.createStatement();
+		st2=con.createStatement();
+		st3=con.createStatement();
+		st4=con.createStatement();
+		
+		
+		ArrayList nomProfil= new ArrayList() ;
+		ArrayList nomArticle= new ArrayList() ;
+		ArrayList list = new ArrayList();
+		ArrayList list1 = new ArrayList();
+		
+		String art,prof,trans,type,wh=null;
+		
+		
+		
+		String max=null; String maxi =null;
+		
+		String whs = (String)request.getSession().getAttribute("werhs");
+		System.out.println("le whs"+whs);
+		String no = request.getParameter("no");
+		System.out.println(no);
+		
+	
+		type = no.substring(0,3);
+		System.out.println(type);
+		wh = no.substring(4,7);
+		System.out.println(wh);
+		trans = no.substring(8,13);
+		System.out.println(trans);
+		
+		
+	
+		
+	
+		rs1=st1.executeQuery("select art_art_libelle from gss_article where art_type_id = 'S3'");
+		//rs2=st2.executeQuery("select max(trans_no) from gss_transaction where (trans_type='CPO') and (whs_id='"+whs+"')");
+		//rs3=st3.executeQuery("select distinct art_art_libelle,profil_libelle,rng_start,rng_end,case when a.art_type_id in ('S1','S2') then decode(substr(r.rng_start, 4, 1),'0', substr(r.rng_start, 4, 2),'1', substr(r.rng_start, 4, 2),'2', substr(r.rng_start, 4, 2), '0' || substr(r.rng_start, 5, 1)) else '_' end hlr,case when a.art_type_id in ('S1','S2') then decode(r.rng_packaged, 'O', 'Sous ordre', 'C', 'En Cours', 'P', 'Package', 'N', 'Non Package') else  '_' end PACKAGING,rng_statut,(rng_end-rng_start+1) as qte from gss_range r,gss_article a,gss_article_profil p,gss_article_type t where (a.art_id=r.art_id)and (p.profil_id=r.profil_id )and (a.art_type_id=t.art_type_id)and(t.art_type_libelle='SIMPOST')and(r.rng_inactif='A')and(r.rng_statut='BRUTE')and(p.profil_libelle in ('BUSINESS','DJEZZY CLASSIC','DJEZZY CONTROL','BUSINESS CONTROL')) order by qte");
+		rs4=st4.executeQuery("select distinct art_art_libelle,rng_start,r.rng_end, rng_statut,(rng_end-rng_start+1) as qte from gss_range r,gss_article a,gss_transaction_range tr, gss_transaction t where (a.art_id=r.art_id) and (tr.t_r_rng_id=r.rng_id) and (tr.t_r_rng_act_id=r.act_id)and (tr.t_r_trans_type='"+type+"')and (tr.t_r_trans_no='"+trans+"')and (tr.t_r_trans_whs='"+whs+"')and(r.rng_inactif='A')and (r.rng_statut='EN COURS')order by qte");
+		System.out.println("select distinct art_art_libelle,rng_start,r.rng_end, rng_statut,(rng_end-rng_start+1) as qte from gss_range r,gss_article a,gss_transaction_range tr, gss_transaction t where (a.art_id=r.art_id) and (tr.t_r_rng_id=r.rng_id) and (tr.t_r_rng_act_id=r.act_id)and (tr.t_r_trans_type='"+type+"')and (tr.t_r_trans_no='"+trans+"')and (tr.t_r_trans_whs='"+whs+"')and(r.rng_inactif='A')and (r.rng_statut='EN COURS')order by qte");
+		
+
+		
+		while (rs1.next())
+		{
+			art = rs1.getString(1).trim();
+			nomArticle.add(art);
+			System.out.println(art);
+		}
+		
+		
+		
+		try{
+			
+			rs2=st2.executeQuery("select max(trans_no) from gss_transaction where (trans_type='CSC') and (whs_id='"+whs+"')");
+			
+			if (rs2.next()){
+				max = rs2.getString(1).trim();
+				System.out.println("le max :"+max);
+			}
+			int res =Integer.parseInt(max);
+			int res1=res+1;
+			maxi = Integer.toString(res1);
+			}
+			catch (Exception e){
+				maxi = "10000";
+	     		//System.out.println("rs est null");	
+	     	}
+			
+			request.getSession().setAttribute("max", maxi);
+			
+			String code_trans = "CSC"+"-"+whs+"-"+maxi;
+			System.out.println("le code :"+code_trans);
+			
+			
+			
+		while (rs4.next()){
+			
+			Scratch scr = new Scratch();
+			
+			
+			scr.setArt(rs4.getString(1).trim());
+			scr.setStart(rs4.getString(2).trim());
+			scr.setEnd(rs4.getString(3).trim());
+			scr.setActiv(rs4.getString(4).trim());
+			scr.setQte(rs4.getString(5).trim());
+			
+			/// les paramètres
+			scr.setArticle(rs4.getString(1).trim());
+			scr.setQute(rs4.getString(5).trim());
+			scr.setS_str(rs4.getString(2).trim());
+			scr.setS_end(rs4.getString(3).trim());
+			
+			list.add(scr);
+			
+			System.out.println("["+rs4.getString(1)+"],["+rs4.getString(2)+"],["+rs4.getString(3)+"],["+rs4.getString(4)+"],["+"],["+rs4.getString(5)+"],[");
+			
+		}
+		
+		Scratch2 scr2 = new Scratch2();
+		
+		scr2.setAa("");
+		scr2.setQt("");
+		scr2.setSe("");
+		scr2.setSt("");
+		
+		list1.add(scr2);
+		
+		System.out.println("apres la 2eme coll");
+		
+		
+		chargementForm.setScratch(list);
+		chargementForm.setScratch2(list1);
+		chargementForm.setNomArticle(nomArticle);
+		
+		chargementForm.setTrans(code_trans);
+		chargementForm.setArticle("");
+		chargementForm.setND(null);
+		chargementForm.setNF(null);
+		chargementForm.setHiddenTest("");
+		
+		
+		return mapping.findForward("chargement2"); 
+		
+		
+	}
+	
+	
+	public ActionForward afficher(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException, SQLException  {
+		
+		ChargementForm chargementForm = (ChargementForm) form;
+		
+		ArrayList list = new ArrayList();
+		List list2,list3;
+	
+		
+		
+		list2 = chargementForm.getScratch();
+		list3 =  chargementForm.getScratch2();
+		
+		chargementForm.setScratch(list2);
+		/// article,s_str,s_end,qute
+		
+		String article = request.getParameter("article");
+		System.out.println(article);
+		
+		String s_str = request.getParameter("s_str");
+		Long s_str1 =Long.parseLong(s_str);
+		System.out.println(s_str);
+		
+		String s_end = request.getParameter("s_end");
+		Long s_end1 =Long.parseLong(s_end);
+		System.out.println(s_end);
+		
+		String qute = request.getParameter("qute");
+		System.out.println(qute);
+		
+        ////////	 dans les combos
+		chargementForm.setArticle(article);
+		chargementForm.setND(s_str1);
+		chargementForm.setNF(s_end1);
+		
+		
+		chargementForm.setNote(chargementForm.getNote());
+		System.out.println("note====="+chargementForm.getNote());
+		chargementForm.setHiddenTest("");
+		
+		
+		
+		return mapping.findForward("chargement2"); 
+		
+	}
+	
+	public String getResult(String Str)
+	{
+		return ((Str != null) ? Str=Str.trim():Str);	
+	}
+	
+	
+	public String setResult(String Str)
+	{
+		return ((Str != null) ? Str : null);	
+	}
+	
+	
+	public ActionForward Ajouter(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException, SQLException  {
+		
+		ChargementForm chargementForm = (ChargementForm) form;
+		
+		
+		String art,nd,nf,qute=null;
+		Long ndl,nfl,qte;
+		List list=null;
+		ArrayList nouv=new ArrayList();
+		
+		
+		List listGrand=null;
+		Statement st = null;
+		ResultSet rs = null;
+		Boolean trouver= false;
+		 Boolean boucle= false, existe= false, existe2=false;
+		
+		//
+		list = chargementForm.getScratch2();
+		listGrand =chargementForm.getScratch();
+		
+		art = chargementForm.getArticle();
+		Long serial_start = chargementForm.getND();
+		 Long serial_end = chargementForm.getNF();
+		 
+		 nd = Long.toString(serial_start);
+		 System.out.println(nd);
+		 nf = Long.toString(serial_end);
+		
+		ndl=Long.parseLong(nd);
+		nfl=Long.parseLong(nf);
+		qte=nfl-ndl+1;
+		qute=Long.toString(qte);
+		
+		if (qte<=0){
+			chargementForm.setHiddenTest("fin inferieur debut");	
+	    	 System.out.println("le fin est< debut");
+	    	 
+	    	 chargementForm.setArticle("");
+	    	// chargementForm.setProfil("");
+	    	 chargementForm.setND(null);
+	    	 chargementForm.setNF(null);
+	    	
+	    	  return mapping.findForward("chargement2");
+	     }
+		
+		Scratch2 scr2 = new Scratch2();
+		
+		  ///////////// vérifier la taille du serial number
+		
+		if(nd.length()<15 )
+		 {
+			chargementForm.setHiddenTest("serial début insuffisant");	
+		   	    System.out.println("serial début insuffisant");
+		   	    boucle = true;
+		   	    return mapping.findForward("chargement2");
+		 }
+		 else {
+			 if(nf.length()<15){
+				 
+				 chargementForm.setHiddenTest("serial fin insuffisant");	
+			   	    System.out.println("serial fin insuffisant");
+			   	    boucle = true;
+			   	    return mapping.findForward("chargement2");
+				 
+			 }
+		 }
+		 if(boucle.equals(false))
+				
+			{
+			 if (list.size()==0){
+					
+		   		 for (int j=0;j<listGrand.size();j++){
+		   			Scratch list3 = (Scratch)listGrand.get(j);
+		   		 if(
+		 	    	     (ndl >= Long.parseLong(list3.getStart()) 
+		 	    	    		 &&  
+		 	    	      nfl<= Long.parseLong(list3.getEnd())
+		 	    	      && art.equals(list3.getArticle())
+		 	    	             )
+		 	    	    )
+		 	    		{
+		 	    		
+		 	    		 trouver=true;
+		 	    		 existe=true;
+		 	    		 
+		 	    		 break;
+		 	    		
+		 	    		 	
+		 	    		}/// end if teste coll grande
+		   		 }//// end for coll grande
+		   		
+		   		 if (existe.equals(false)){
+		   			chargementForm.setHiddenTest("range n'est pas dans la coll grande");	
+			    	 System.out.println("range n'existe pas dans la collection grande");
+			    	 
+			    	
+			    	
+			    	  return mapping.findForward("chargement2");
+			     }
+		   else{
+			
+             //////	  calculer la quantité
+				  		
+				  		 qte=nfl-ndl+1;
+				  		 qute=Long.toString(qte);
+				  		 System.out.println(qute);
+				  		 
+				  		 ///// remplir la collection
+				  		 
+				  		scr2.setAa(art);
+				  		scr2.setSt(nd);
+				  		scr2.setStt(nd);
+				  		scr2.setSe(nf);
+				  		scr2.setSee(nf);
+				  		scr2.setQt(qute);
+				  		scr2.setAaa(art);
+				  		scr2.setQtt(qute);
+				  		
+				  		list.add(scr2);
+				  		 
+				  		
+				  			 for (int j=0; j<list.size();j++){
+				  				System.out.println("dans le for");
+				  				System.out.println("j ="+j);
+				  				
+				  				Scratch2 list3 = (Scratch2)list.get(j);
+				  					
+				  				  if ((list3.getAa().equals("")))  
+				  					{
+				  						System.out.println("dans le if");
+				  					}
+				  			      else{
+				  						nouv.add(list3);
+				  						System.out.println("dans le else");
+				  					
+				  					}
+				  					
+				  			}
+				  		
+				  		trouver=true;
+				  		chargementForm.setScratch2(nouv);
+		  		    	
+		  		      
+		    }// end if ""
+		   		 
+			 }
+			 else{
+		   		 
+				 
+			 
+				for (int i=0; i<list.size();i++){
+				
+				 Scratch2 list2 = (Scratch2)list.get(i);
+					
+					if (list2.getAa().equals("")){
+		  		    	
+		  		    	System.out.println("la 1ere ligne vide");
+		  		    	
+		  		    	for (int j=0;j<listGrand.size();j++){
+		  		    		Scratch list3 =(Scratch) listGrand.get(j);
+		  		    		
+		  		    		
+		  		    	 if(
+		  		    			(ndl >= Long.parseLong(list3.getStart()) 
+		  			    	    		 &&  
+		  			    	      nfl<= Long.parseLong(list3.getEnd())
+		  			    	      && art.equals(list3.getArticle())
+		  			    	             ) 
+		  		    	     )
+		  		    		{
+		  		    		 
+		  		    		 
+		  		    		
+		  		    		 trouver=true;
+		  		    		 existe=true;
+		  		    		 
+		  		    		 break;
+		  		    		
+		  		    		 	
+		  		    		}/// end if teste coll grande
+		  		    	 
+		  		    	  		    	
+		  		    		    
+		  		    	  }//// end for coll grande
+		  		    
+		  		   	if (existe.equals(false)){
+		  		    		 chargementForm.setHiddenTest("range n'est pas dans la coll grande");	
+			  		    	 System.out.println("range n'existe pas dans la collection grande");
+			  		    	
+			  		    	
+			  		    	  return mapping.findForward("chargement2");
+			  		     }	
+		  		   	else{
+		  		    	
+	                     //////	  calculer la quantité
+				  		
+				  		 qte=nfl-ndl+1;
+				  		 qute=Long.toString(qte);
+				  		 System.out.println(qute);
+				  		 
+				  		 ///// remplir la collection
+				  		 
+				  		scr2.setAa(art);
+				  		scr2.setSt(nd);
+				  		scr2.setStt(nd);
+				  		scr2.setSe(nf);
+				  		scr2.setSee(nf);
+				  		scr2.setQt(qute);
+				  		scr2.setAaa(art);
+				  		scr2.setQtt(qute);
+				  		
+				  		list.add(scr2);
+				  		 
+				  		
+				  			 for (int j=0; j<list.size();j++){
+				  				System.out.println("dans le for");
+				  				System.out.println("j ="+j);
+				  				
+				  				Scratch2 list3 = (Scratch2)list.get(j);
+				  					
+				  				  if ((list3.getAa().equals("")))  
+				  					{
+				  						System.out.println("dans le if");
+				  					}
+				  			      else{
+				  						nouv.add(list3);
+				  						System.out.println("dans le else");
+				  					
+				  					}
+				  					
+				  			}
+				  		
+				  		trouver=true;
+				  		chargementForm.setScratch2(nouv);
+		  		    	break;
+		  		   
+		  		    }// end if ""
+					}
+					
+			     ///// si la collection est non vide
+		  		    
+		  		 else{
+		  		    	
+		  		    	System.out.println("la 1ere ligne non vide");
+		  		         
+		  		    	if(
+		  		    			(art.equals(list2.getAa())&& Long.parseLong(nd)>= Long.parseLong(list2.getSt()) )&& (Long.parseLong(nf)<= (Long.parseLong(list2.getSe()) ))
+		  		    			||
+		  		    			(art.equals(list2.getAa())&& Long.parseLong(list2.getSt())>=Long.parseLong(nd) && Long.parseLong(list2.getSt())<=Long.parseLong(nf))
+		  		    			||
+		  		    			(art.equals(list2.getAa())&& Long.parseLong(list2.getSe())>=Long.parseLong(nd) && Long.parseLong(list2.getSe())<=Long.parseLong(nf))
+		  		    	
+		  		    	   )
+		  		    	{
+		  		    		 chargementForm.setHiddenTest("range dans la coll");	
+			  		    	 System.out.println("range existe dans la collection");
+			  		    	 chargementForm.setArticle("");
+			  				  chargementForm.setND(null);
+			  				  chargementForm.setNF(null);
+			  		    	 trouver=true;
+			  		    	 existe2= true;
+			  		    	 existe=true;
+			  		    	 
+			  		    	return mapping.findForward("chargement2");
+		  		    	}//// end if collection
+		  		    
+		  		    }/// end else " "
+					
+					if(existe2.equals(false))
+		    		{
+		  		   
+       ////	n'existe pas dans la petite coll
+						for (int j=0;j<listGrand.size();j++){
+							Scratch list3 =(Scratch) listGrand.get(j);
+		  		    		
+		  		    		
+		  		    		
+		  		    		if(
+			  		    			(ndl >= Long.parseLong(list3.getStart()) 
+			  			    	    		 &&  
+			  			    	      nfl<= Long.parseLong(list3.getEnd())
+			  			    	      && art.equals(list3.getArticle())
+			  			    	            ) 
+			  		    	     )
+		  		    		
+			  		    		{
+			  		    		// trouver=true;
+			  		    		 existe=true;
+			  		    		 
+			  		    		 break;
+			  		    		
+			  		    		 	
+			  		    		}/// end if teste coll grande
+		  		    	 	
+		  		    	  }//// end for coll grande
+			   
+			      }// end if existe2
+			    
+			    }/// end else " "
+
+	}
+	}
+		 if (existe.equals(false)){
+			 chargementForm.setHiddenTest("range n'est pas dans la coll grande");	
+	      	 System.out.println("range n'existe pas dans la collection grande");
+	      	 
+	      	chargementForm.setArticle("");
+	       	chargementForm.setND(null);
+	      	chargementForm.setNF(null);
+	      	
+	      	  return mapping.findForward("chargement2");
+	      		 }
+	      		 
+	      		  if (trouver.equals(false)){
+	  			   
+		  			 System.out.println("rang n'existe pas dans la collection ");
+		  			 
+		  		 //////	  calculer la quantité
+				  		
+				  		 qte=nfl-ndl+1;
+				  		 qute=Long.toString(qte);
+				  		 System.out.println(qute);
+				  		 
+				  		 ///// remplir la collection
+				  		 
+				  		scr2.setAa(art);
+				  		scr2.setSt(nd);
+				  		scr2.setStt(nd);
+				  		scr2.setSe(nf);
+				  		scr2.setSee(nf);
+				  		scr2.setQt(qute);
+				  		scr2.setAaa(art);
+				  		scr2.setQtt(qute);
+				  		
+				  		list.add(scr2);
+				  		 
+				  		
+			  		chargementForm.setScratch2(list); 
+			  }
+			  		 
+			  		 
+			  		
+		
+		
+		
+     /////// vider les combo + champs de texte
+			  chargementForm.setArticle("");
+			  chargementForm.setND(null);
+			  chargementForm.setNF(null);
+			  chargementForm.setNote(chargementForm.getNote());
+			  chargementForm.setHiddenTest("");
+		 
+		
+		
+		return mapping.findForward("chargement2"); 
+		
+
+		
+	}
+	
+    public ActionForward Retirer(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)throws IOException, ServletException, SQLException  {
+		
+    	ChargementForm chargementForm = (ChargementForm) form;
+		
+		List list=null;
+		ArrayList nouv= new ArrayList();
+		
+		list = chargementForm.getScratch2();
+	
+		String art = request.getParameter("aaa");
+		System.out.println("arti"+art);
+		String ser_str = request.getParameter("stt");
+		System.out.println("serial_str"+ser_str);
+		String ser_end = request.getParameter("see");
+		System.out.println("serial_end"+ser_end);
+		String quante = request.getParameter("qtt");
+		System.out.println("qte"+quante);
+		
+		for (int i=0; i<list.size();i++){
+			Scratch2 list2 = (Scratch2)list.get(i);
+			
+			Scratch2 conf = new Scratch2();
+			
+			if ((list2.getAa().equals(art))&&(list2.getSe().equals(ser_end))&&(list2.getSt().equals(ser_str))) 
+			{
+				System.out.println("dans le if");
+			}
+			
+			else{
+				nouv.add(list2);
+				
+			}
+			
+			}
+		chargementForm.setScratch2(nouv);
+		chargementForm.setNote(chargementForm.getNote());
+		chargementForm.setHiddenTest("");
+			
+		
+		
+		return mapping.findForward("chargement2"); 
+	}
+    
+
+	
+	///////////// valider
+	
+	public ActionForward valider(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws SQLException {
+	
+		ChargementForm chargementForm = (ChargementForm) form;
+		
+		Connexion connexion=new Connexion();
+		Connection con=connexion.createConnection();
+		
+		Statement st,st1,st2,st3,st4,st5,st8,st9,st10,st11 = null;
+		ResultSet rs = null,rs1,rs2 = null,rs3,rs4,rs8 = null;
+		st = con.createStatement();
+		st1=con.createStatement();
+		st2=con.createStatement();
+		st3=con.createStatement();
+		st4=con.createStatement();
+		st5=con.createStatement();
+		st8=con.createStatement();
+		st9=con.createStatement();
+		st10=con.createStatement();
+		st11 = con.createStatement();
+		
+		con.setAutoCommit(false);
+		
+		String act_id = null,dest_id=null;
+		List scratch;
+		String start,end,tra,wh,no,whp,pfp,arp,rp,acp,pq,statu,swap,promo,
+		prior,p,t,s,r,ss,ee,maxrng = null,a,b,c,d = null,max_range,max_range2,max_range3=null,rng_end,rng_start;
+		int h,h1,h3,R2,R3,R1,h4,h5,R4=0;
+		Long l1,l2,l3,l4;
+		
+		String user = (String)request.getSession().getAttribute("username");
+		System.out.println("user connecté :"+user);
+		String whs = (String)request.getSession().getAttribute("werhs");
+		String max = (String)request.getSession().getAttribute("max");
+		System.out.println("warehouse :"+whs);
+		System.out.println("le max apres request :"+max);
+		String note = chargementForm.getNote();
+		System.out.println("note "+note);
+		
+		
+		scratch = chargementForm.getScratch2();
+		
+		
+		
+		
+	
+		
+	////// calculer id_user 
+		
+		 rs = st.executeQuery("select act_id from gss_actor where act_name = '"+user+"'");
+		
+		 		  
+		 if(rs.next())
+			
+		    {
+				act_id =rs.getString(1).trim();
+				System.out.println(act_id);
+			}
+			
+			
+			
+	    /////////////////////// INSERTION DE LA TRANSACTION DSC
+			
+			System.out.println ("insert into  gss_transaction values('"+max+"','CSC','W00',SYSDATE,'"+act_id+"','','',decode('"+note+"','null',null,'"+note+"'),'','','','','N')");
+			h = st3.executeUpdate("insert into  gss_transaction values('"+max+"','CSC','W00',SYSDATE,'"+act_id+"','','',decode('"+note+"','null',null,'"+note+"'),'','','','','N')");
+			 
+		         	
+			
+		/////////////////////// insérer les ranges de la 2eme collections dans la base
+		
+		 ////tester si la collection est vide
+		if(scratch.size()==0){
+			  chargementForm.setHiddenTest("collection null");
+		 		 chargementForm.setND(null);
+		 		 chargementForm.setNF(null);
+		 		  
+		 		  return mapping.findForward("chargement2");
+		}
+		
+		 for (int j=0;j<scratch.size();j++){
+		    	
+			 Scratch2 pre = (Scratch2)scratch.get(j);
+		 	   
+		 	   System.out.println(j);
+		 	   String art=pre.getAa();
+		 	   
+		 	   if (art.equals("")){
+		 		  
+		 		  chargementForm.setHiddenTest("collection null");
+		 		 chargementForm.setND(null);
+		 		 chargementForm.setNF(null);
+		 		  
+		 		  return mapping.findForward("chargement2");
+		 		
+		 	   
+		 	   } //// end if collection null
+		 	   
+		 	   else {
+		 		   
+		 		   
+               ////// le max du range
+		 			try{
+		 				rs4=st5.executeQuery("select max(rng_id) from gss_range where ACT_ID='"+act_id+"'");
+		 				
+		 				if (rs4.next()){
+		 				     
+		 					maxrng=rs4.getString(1).trim();
+		 				    
+		 				    }
+		 				
+		 				    R2=Integer.parseInt(maxrng);
+		 				 
+		 				    R2=R2+1;
+		 					max_range=Integer.toString(R2);
+		 					System.out.println("max range à inséré :"+max_range); }
+		 				
+		 				catch(Exception ex){
+		 					max_range = "1000000000";
+		 				}
+		 		   
+		
+	      /////// la j eme ligne de la collection
+			   
+		 		System.out.println("aa="+pre.getAa());
+	           	System.out.println("st="+pre.getSt());
+				System.out.println("se="+pre.getSe());
+				System.out.println("qt="+pre.getQt());
+			
+				ss = pre.getSt();
+				System.out.println("ss: "+ss);
+				ee = pre.getSe();
+				System.out.println("ee: "+ee);
+				
+			///////  sélectionner les ranges qui existent dans la base avec l'etat brute	
+			
+				rs1=st1.executeQuery("select rng_start,rng_end,rng_id,act_id,profil_id,r.art_id,rng_pq,rng_statut,rng_swap,trans_type,whs_id,trans_no,rng_promotion,rng_priorite,rng_packaged,rng_transfert,rng_sortie,rng_reintegration,rng_whs,rng_dist,rng_packaging_whs,rng_sortie_whs,rng_reintegration_whs,rng_transfert_whs from gss_range r, gss_article ar where (r.art_id = ar.art_id) and (rng_inactif ='A')and (ar.art_type_id='S3')and (r.rng_statut='EN COURS') and (r.rng_tpd is null)"); 			
+				
+				while (rs1.next()){
+					
+					System.out.println("dans le while");
+					
+					start = rs1.getString(1).trim();
+					System.out.println("1"+start);
+								
+					end = rs1.getString(2).trim();
+					System.out.println("2"+end);
+				/*	tra = rs1.getString(10).trim();
+					System.out.println("3"+tra);
+					wh=rs1.getString(11).trim();
+					System.out.println("4"+wh);
+					no=rs1.getString(12).trim();
+					System.out.println("5"+no);*/
+					whp=rs1.getString(19).trim();
+					System.out.println("6"+whp);
+					pfp=getResult(rs1.getString(5));
+					System.out.println("7"+pfp);
+					arp=rs1.getString(6).trim();
+					System.out.println("8"+arp);
+					rp=rs1.getString(3).trim();
+					System.out.println("9"+rp);
+					acp=rs1.getString(4).trim();
+					System.out.println("10"+acp);
+					pq=getResult(rs1.getString(7));
+					System.out.println("11"+rp);
+					statu=rs1.getString(8).trim();
+					System.out.println("12"+statu);
+					swap=getResult(rs1.getString(9));
+					System.out.println("13"+rp);
+					promo=getResult(rs1.getString(13));
+					System.out.println("14"+promo);
+				    prior=getResult(rs1.getString(14));
+					System.out.println("15"+prior);
+				    p=rs1.getString(15).trim();
+					System.out.println("16"+rp);
+					t=rs1.getString(16).trim();
+					System.out.println("17"+rp);
+					s=rs1.getString(17).trim();
+					System.out.println("18"+rp);
+					r=rs1.getString(18).trim();
+					System.out.println("19"+rp);
+					
+					
+
+					 String whspack=getResult(rs1.getString(21));
+					           System.out.println("21"+whspack);
+					          
+					           String whssor=getResult(rs1.getString(22));
+					           System.out.println("22"+whssor);
+					           
+					           String whsrentegr=getResult(rs1.getString(23));
+					           System.out.println("23"+whsrentegr);
+					           
+					           String whstransfert=getResult(rs1.getString(24));
+					                  System.out.println("24"+whstransfert);
+					
+			
+				//// insertion des ranges dans la base	
+					
+					/////////	 le range fils = range pere
+					  
+					  if ( (ss.equals(start)) && (ee.equals(end)) ) 
+					  {
+						  System.out.println("dans le 1er if");
+						  
+						 				  
+						  System.out.println("insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+						 h1 = st4.executeUpdate("insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+						
+												
+							System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							
+							h3 = st9.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'"); 
+						
+							h3=0;
+							st9=null;
+							st9=con.createStatement();
+							System.out.println("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");
+							h3 = st9.executeUpdate("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");
+							
+							System.out.println("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+							h4=st10.executeUpdate("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+						break;
+					 
+					  }///// end if 1
+					    
+					  ////// le range fils est la partie gauche du range pere
+					  
+					  if((ss.equals(start))&&(Long.parseLong(ee)< Long.parseLong(end)) ){
+						  System.out.println("dans le 2eme if");
+						  
+						  l1 = Long.parseLong(ee);
+						  l2=l1+1;
+						  rng_end = Long.toString(l2);
+						  
+						  
+						     System.out.println("la 1ere insertion dans la table range : insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+							 h1 = st4.executeUpdate("insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+							 				  
+						    R3= Integer.parseInt(max_range);
+						    R3 = R3 +1;
+							max_range2=Integer.toString(R3);
+							 
+							
+							System.out.println("max range 2 string "+max_range2);  
+							
+						     System.out.println("la 2eme insertion dans la table range : insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+rng_end+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+							 h5 = st11.executeUpdate("insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+rng_end+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+							 
+							 
+								
+						     System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+						     h3 = st9.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'"); 
+							
+						     
+							System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							h4 = st10.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							
+							h3=0;
+							st9=null;
+							st9=con.createStatement();
+							System.out.println("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");			
+							h3 = st9.executeUpdate("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");
+							
+							System.out.println("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+							h4=st10.executeUpdate("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+						break;
+					 
+					  }//////end if 2
+					  
+				    
+					  ///// le range fils est la partie droite du range pere
+					  
+					  if((Long.parseLong(ss)> Long.parseLong(start))&&(ee.equals(end)) )
+				  
+				      {
+						  System.out.println("dans le 3eme if");
+						  l1 = Long.parseLong(ss);
+						  l2=l1-1;
+						  rng_start = Long.toString(l2);
+						  
+						  System.out.println("la 1ere insertion dans la table range : insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+							 h1 = st4.executeUpdate("insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+							 				  
+						    R3= Integer.parseInt(max_range);
+						    R3 = R3 +1;
+							max_range2=Integer.toString(R3);
+							 
+							
+							System.out.println("max range 2 string "+max_range2);  
+							
+						     System.out.println("la 2eme insertion dans la table range : insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+rng_start+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+							 h5 = st11.executeUpdate("insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+rng_start+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+							 
+							 
+								
+						     System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+						     h3 = st9.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'"); 
+							
+						     
+							System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							h4 = st10.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							
+							h3=0;
+							st9=null;
+							st9=con.createStatement();
+							System.out.println("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");			
+							h3 = st9.executeUpdate("insert into gss_transaction_range values ('CSC','"+whs+"','"+max+"','"+max_range+"','"+act_id+"',SYSDATE)");
+							
+							System.out.println("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+							h4=st10.executeUpdate("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+						break;
+					  
+				      }/////// end if 3
+		 	   
+					 //////// le fils est au milieu du pere
+					  
+					  if((Long.parseLong(ss)> Long.parseLong(start))&&(Long.parseLong(ee)< Long.parseLong(end)))
+					  {
+						  System.out.println("dans le 4eme if");
+						  
+						  l1 = Long.parseLong(ee);
+						  l2=l1+1;
+						  rng_start = Long.toString(l2);
+						  
+						  l3= Long.parseLong(ss);
+						  l4=l3-1;
+						  rng_end = Long.toString(l4);
+						  
+						  System.out.println("la 1ere insertion dans la table range : insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+rng_end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+						  h1 = st4.executeUpdate("insert into gss_range values ('"+max_range+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+start+"','"+rng_end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+						  
+						  R3= Integer.parseInt(max_range);
+						  R3 = R3 +1;
+						  max_range2=Integer.toString(R3);
+						  System.out.println("max range 2 string "+max_range2); 
+							 
+						  System.out.println("la 2eme insertion dans la table range : insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+rng_start+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+						  h1 = st4.executeUpdate("insert into gss_range values ('"+max_range2+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+rng_start+"','"+end+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'"+statu+"',decode('"+swap+"','null',null,'"+swap+"'),'','','','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+						  
+						  R4= Integer.parseInt(max_range2);
+						  R4 = R4 +1;
+						  max_range3=Integer.toString(R4);
+						  System.out.println("max range 3 string "+max_range3); 
+						  
+						  System.out.println("la 3eme insertion dans la table range : insert into gss_range values ('"+max_range3+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"')");	
+						  h1 = st4.executeUpdate("insert into gss_range values ('"+max_range3+"','"+act_id+"',decode('"+pfp+"','null',null,'"+pfp+"'),'"+arp+"','"+ss+"','"+ee+"','"+rp+"','"+acp+"','A',SYSDATE,'',decode('"+pq+"','null',null,'"+pq+"'),'CHARGE',decode('"+swap+"','null',null,'"+swap+"'),'CSC','W00','"+max+"','','',decode('"+promo+"','null',null,'"+promo+"'),decode('"+prior+"','null',null,'"+prior+"'),'"+p+"','"+t+"','"+s+"','"+r+"','"+whp+"','',decode('"+whspack+"','null',null,'"+whspack+"'),decode('"+whssor+"','null',null,'"+whssor+"'),decode('"+whsrentegr+"','null',null,'"+whsrentegr+"'),decode('"+whstransfert+"','null',null,'"+whstransfert+"'))");
+							 	
+						  System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+						  System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+						  System.out.println("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range3+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+								
+							
+						  
+						  h3 = st9.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'"); 
+						  h4 = st10.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range2+" ,'"+act_id+"' code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+						  h5 = st8.executeUpdate("insert into gss_transaction_range  select t_r_trans_type, t_r_trans_whs,t_r_trans_no,"+max_range3+" ,'"+act_id+"'code ,t_r_date from gss_transaction_range where t_r_rng_id='"+rp+"' and t_r_rng_act_id ='"+acp+"'");
+							
+						    
+						    h3=0;
+							st9=null;
+							st9=con.createStatement();
+							System.out.println("insert into gss_transaction_range values ('CSC','W00','"+max+"','"+max_range3+"','"+act_id+"',SYSDATE)");			
+							
+							h3 = st9.executeUpdate("insert into gss_transaction_range values ('CSC','W00','"+max+"','"+max_range3+"','"+act_id+"',SYSDATE)");
+							
+							System.out.println("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+							h4=st10.executeUpdate("UPDATE gss_range SET rng_inactif = 'I',rng_inactif_date=sysdate WHERE (rng_id='"+rp+"')and (act_id='"+acp+"')");
+						
+							break;
+					  }// end if 4
+		 	   
+				 } // while
+										 	  
+		 	   } //end else collection null
+		
+		
+		 }  //end for
+
+
+   	con.commit();
+		
+		System.out.println("terminer avec sucees");
+		chargementForm.setNote("");
+	
+
+
+		  ActionForward  forward = new RedirectingActionForward();
+	      forward.setPath("/confirmScr.do");
+	      return forward;
+		
+		
+	} ////// methode
+	
+	public ActionForward annuler(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws SQLException {
+		
+		ChargementForm chargementForm = (ChargementForm) form;
+		
+		 ActionForward  forward = new RedirectingActionForward();
+	      forward.setPath("/confirmScr.do");
+	      return forward;
+		
+		
+	}
+	
+}

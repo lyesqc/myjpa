@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/sort.do" location="1170,300" dimension="262,88" />
+  <StrutsActivity path="/treeview.do" location="1170,390" dimension="309,88" />
+  <StrutsActivity path="/main.do" location="-210,-30" dimension="150,100" />
+  <StrutsActivity path="/login.do" location="150,135" dimension="150,100" />
+  <StrutsActivity path="/preparRecep.do" location="360,-15" dimension="288,88" />
+  <StrutsActivity path="/recherche.do" location="570,285" dimension="277,88" />
+  <StrutsActivity path="/recherche1.do" location="210,375" dimension="150,100" />
+  <StrutsActivity path="/preparStk.do" location="660,615" dimension="273,88" />
+  <StrutsActivity path="/stock.do" location="330,765" dimension="252,88" />
+  <StrutsActivity path="/preactivpost.do" location="-75,1095" dimension="150,100" />
+  <StrutsActivity path="/preactive.do" location="345,930" dimension="271,106" />
+  <StrutsActivity path="/preparConfirm.do" location="-195,1425" dimension="295,88" />
+  <StrutsActivity path="/confirmActiv.do" location="120,1245" dimension="287,88" />
+  <StrutsActivity path="/recep3.do" location="585,105" dimension="262,88" />
+  <StrutsActivity path="/nonactivpost.do" location="645,1725" dimension="289,88" />
+  <StrutsActivity path="/nonactiv.do" location="615,1920" dimension="268,88" />
+  <StrutsActivity path="/preparPre.do" location="-135,1800" dimension="150,100" />
+  <StrutsActivity path="/demandPre.do" location="165,1590" dimension="150,100" />
+  <StrutsActivity path="/confirmPre.do" location="165,1965" dimension="150,100" />
+  <StrutsActivity path="/confirmPrepaid.do" location="165,2130" dimension="150,100" />
+  <StrutsActivity path="/preparScr.do" location="660,2085" dimension="273,88" />
+  <StrutsActivity path="/demandScr.do" location="375,2265" dimension="150,100" />
+  <StrutsActivity path="/confirmScr.do" location="645,2400" dimension="150,100" />
+  <StrutsActivity path="/confirmChargement.do" location="675,2550" dimension="150,100" />
+  <StrutsActivity path="/demandSwpo.do" location="-90,2490" dimension="150,100" />
+  <StrutsActivity path="/preparSwpo.do" location="165,2310" dimension="150,100" />
+  <StrutsActivity path="/confirmSwpo.do" location="180,2625" dimension="150,100" />
+  <StrutsActivity path="/swapPo.do" location="-105,2805" dimension="150,100" />
+  <StrutsActivity path="/preparSwpr.do" location="405,2760" dimension="150,100" />
+  <StrutsActivity path="/demandSwpr.do" location="180,2925" dimension="150,100" />
+  <StrutsActivity path="/confirmSwpr.do" location="630,2925" dimension="150,100" />
+  <StrutsActivity path="/swapPr.do" location="390,3105" dimension="150,100" />
+  <StrutsActivity path="/preparTest.do" location="-30,2955" dimension="150,100" />
+  <StrutsActivity path="/affecTest.do" location="-240,3165" dimension="150,100" />
+  <StrutsActivity path="/preparPerdu.do" location="195,3105" dimension="150,100" />
+  <StrutsActivity path="/affectPerdu.do" location="113,3270" dimension="150,100" />
+  <StrutsActivity path="/preparDefect.do" location="765,3270" dimension="150,100" />
+  <StrutsActivity path="/affecDefect.do" location="315,3270" dimension="150,100" />
+  <StrutsActivity path="/package.do" location="795,735" dimension="266,88" />
+  <StrutsActivity path="/pac.do" location="1110,870" dimension="243,88" />
+  <StrutsActivity path="/listordre.do" location="735,1110" dimension="268,88" />
+  <StrutsActivity path="/envoi.do" location="1230,1470" dimension="252,88" />
+  <StrutsActivity path="/recepackag.do" location="1550,450" dimension="284,88" />
+  <StrutsActivity path="/ordretrans.do" location="2150,450" dimension="279,88" />
+  <StrutsActivity path="/ordretrans1.do" location="2750,450" dimension="285,88" />
+  <StrutsActivity path="/envoitrans.do" location="1250,650" dimension="277,88" />
+  <StrutsActivity path="/receptrans.do" location="1850,650" dimension="281,88" />
+  <StrutsActivity path="/afficher1.do" location="2450,650" dimension="270,88" />
+  <StrutsActivity path="/autoreintegr.do" location="1550,850" dimension="287,88" />
+  <StrutsActivity path="/autoreintegr1.do" location="2150,850" dimension="293,88" />
+  <StrutsActivity path="/afficher2.do" location="2750,850" dimension="270,88" />
+  <StrutsActivity path="/reintegr.do" location="1560,1560" dimension="267,88" />
+  <StrutsActivity path="/afficher3.do" location="2150,1050" dimension="270,88" />
+  <StrutsActivity path="/afficher4.do" location="2475,1335" dimension="270,88" />
+  <StrutsActivity path="/afficher.do" location="1850,1250" dimension="264,88" />
+  <StrutsActivity path="/rechedit.do" location="885,1425" dimension="268,88" />
+  <StrutsActivity path="/rechedit1.do" location="615,405" dimension="274,88" />
+  <StrutsActivity path="/parametre.do" location="350,1450" dimension="276,88" />
+  <StrutsActivity path="/discovernaima1.do" location="1550,1450" dimension="301,88" />
+  <StrutsActivity path="/discovernaima.do" location="2150,1450" dimension="295,88" />
+  <StrutsActivity path="/preparmodif.do" location="2750,1450" dimension="284,88" />
+  <StrutsActivity path="/preparparametre.do" location="2750,1250" dimension="308,88" />
+  <StrutsActivity path="/parametre1.do" location="2150,2050" dimension="282,88" />
+  <StrutsActivity path="/par.do" location="2750,2050" dimension="242,88" />
+  <StrutsActivity path="/autosorti.do" location="650,2250" dimension="270,88" />
+  <StrutsActivity path="/afficher5.do" location="1250,2150" dimension="270,88" />
+  <StrutsActivity path="/sortie.do" location="1850,2250" dimension="254,88" />
+  <StrutsActivity path="/approbation.do" location="3050,1650" dimension="285,88" />
+  <StrutsActivity path="/preparReserv.do" location="3050,650" dimension="292,88" />
+  <StrutsActivity path="/reservation.do" location="3050,1050" dimension="284,88" />
+  <StrutsActivity path="/listreserv.do" location="3050,1850" dimension="273,88" />
+  <StrutsActivity path="/afficherecep.do" location="2750,2250" dimension="287,88" />
+  <StrutsActivity path="/annuler.do" location="1250,2450" dimension="263,88" />
+  <StrutsActivity path="/afficherparametre.do" location="3350,2150" dimension="314,88" />
+  <StrutsActivity path="/gestionprofil.do" location="2150,2450" dimension="286,88" />
+  <StrutsActivity path="/forms/login.jsp" location="135,-15" dimension="150,100" />
+  <StrutsActivity path="/forms/listprofil.jsp" location="1850,2450" dimension="119,49" />
+  <StrutsActivity path="/forms/menuPrincipal.jsp" location="-120,135" dimension="150,100" />
+  <StrutsActivity path="/forms/recep.jsp" location="375,120" dimension="150,100" />
+  <StrutsActivity path="/forms/recherche.jsp" location="345,285" dimension="130,49" />
+  <StrutsActivity path="/forms/stock.jsp" location="360,600" dimension="150,100" />
+  <StrutsActivity path="/forms/popupetatdist.jsp" location="50,750" dimension="149,49" />
+  <StrutsActivity path="/forms/pophistorique.jsp" location="3350,1450" dimension="147,49" />
+  <StrutsActivity path="/forms/menuvalider.jsp" location="2450,2350" dimension="140,49" />
+  <StrutsActivity path="/forms/activPost.jsp" location="15,930" dimension="150,100" />
+  <StrutsActivity path="/forms/ConfirmActiv.jsp" location="-105,1245" dimension="150,100" />
+  <StrutsActivity path="/forms/ActivationPO.jsp" location="135,1440" dimension="150,100" />
+  <StrutsActivity path="/forms/nonActiv.jsp" location="435,1800" dimension="150,100" />
+  <StrutsActivity path="/forms/activPrepaid.jsp" location="-120,1590" dimension="150,100" />
+  <StrutsActivity path="/forms/confirmPre.jsp" location="-105,1980" dimension="150,100" />
+  <StrutsActivity path="/forms/activationPRE.jsp" location="-90,2160" dimension="150,100" />
+  <StrutsActivity path="/forms/demandScr.jsp" location="375,2100" dimension="150,100" />
+  <StrutsActivity path="/forms/confirmScr.jsp" location="405,2400" dimension="150,100" />
+  <StrutsActivity path="/forms/chargemenScratch.jsp" location="405,2550" dimension="150,100" />
+  <StrutsActivity path="/forms/demandSwpo.jsp" location="-90,2310" dimension="150,100" />
+  <StrutsActivity path="/forms/confirmSwpo.jsp" location="-90,2625" dimension="150,100" />
+  <StrutsActivity path="/forms/demandSwpr.jsp" location="180,2760" dimension="150,100" />
+  <StrutsActivity path="/forms/confirmSwpr.jsp" location="390,2925" dimension="150,100" />
+  <StrutsActivity path="/forms/Test.jsp" location="-255,2955" dimension="150,100" />
+  <StrutsActivity path="/forms/Perdu.jsp" location="-30,3105" dimension="150,100" />
+  <StrutsActivity path="/forms/Defect.jsp" location="540,3270" dimension="150,100" />
+  <StrutsActivity path="/forms/packaging.jsp" location="765,960" dimension="150,100" />
+  <StrutsActivity path="/forms/ordre.jsp" location="1155,1140" dimension="108,49" />
+  <StrutsActivity path="/forms/envoiePackaging.jsp" location="1170,1710" dimension="150,100" />
+  <StrutsActivity path="/forms/recepackag.jsp" location="1850,1750" dimension="137,49" />
+  <StrutsActivity path="/forms/listenvoip.jsp" location="2150,1750" dimension="127,49" />
+  <StrutsActivity path="/forms/ordretrans.jsp" location="2450,1750" dimension="133,49" />
+  <StrutsActivity path="/forms/listordretrans.jsp" location="2750,1750" dimension="146,49" />
+  <StrutsActivity path="/forms/envoitrans.jsp" location="1550,1850" dimension="133,49" />
+  <StrutsActivity path="/forms/receptrans.jsp" location="1850,1850" dimension="134,49" />
+  <StrutsActivity path="/forms/listenvoitrans.jsp" location="2150,1850" dimension="146,49" />
+  <StrutsActivity path="/forms/combo1.jsp" location="2450,1850" dimension="119,49" />
+  <StrutsActivity path="/forms/autoreintegr.jsp" location="2750,1850" dimension="142,49" />
+  <StrutsActivity path="/forms/combo2.jsp" location="950,1950" dimension="119,49" />
+  <StrutsActivity path="/forms/reintegr.jsp" location="1250,1950" dimension="120,49" />
+  <StrutsActivity path="/forms/listautoreintegr.jsp" location="1550,1950" dimension="155,49" />
+  <StrutsActivity path="/forms/combo3.jsp" location="1850,1950" dimension="119,49" />
+  <StrutsActivity path="/forms/combo4.jsp" location="2150,1950" dimension="119,49" />
+  <StrutsActivity path="/forms/combo.jsp" location="2450,1950" dimension="113,49" />
+  <StrutsActivity path="/forms/edit.jsp" location="2750,1950" dimension="100,49" />
+  <StrutsActivity path="/forms/autosorti.jsp" location="1550,1150" dimension="125,49" />
+  <StrutsActivity path="/forms/autosorti_reserv.jsp" location="1250,2350" dimension="162,49" />
+  <StrutsActivity path="/forms/reserv.jsp" location="1850,1150" dimension="113,49" />
+  <StrutsActivity path="/forms/modifacteur.jsp" location="1550,2050" dimension="139,49" />
+  <StrutsActivity path="/forms/naima.jsp" location="1850,2050" dimension="110,49" />
+  <StrutsActivity path="/forms/addacteur.jsp" location="1250,2050" dimension="131,49" />
+  <StrutsActivity path="/forms/parametre.jsp" location="2750,1050" dimension="132,49" />
+  <StrutsActivity path="/forms/parametre_warehouse.jsp" location="3350,2050" dimension="191,49" />
+  <StrutsActivity path="/forms/parametre_article.jsp" location="3350,1550" dimension="167,49" />
+  <StrutsActivity path="/forms/listaprob.jsp" location="950,1250" dimension="123,49" />
+  <StrutsActivity path="/forms/affichaprob.jsp" location="2450,1650" dimension="137,49" />
+  <StrutsActivity path="/forms/combo5.jsp" location="1850,2150" dimension="119,49" />
+  <StrutsActivity path="/forms/sortie.jsp" location="1550,1050" dimension="109,49" />
+  <StrutsActivity path="/forms/listautosorti.jsp" location="1850,1050" dimension="138,49" />
+  <StrutsActivity path="/forms/listreserv.jsp" location="1550,1250" dimension="126,49" />
+  <StrutsActivity path="/forms/approbation.jsp" location="2750,1150" dimension="140,49" />
+  <StrutsActivity path="/forms/menuvalider3.jsp" location="3350,2350" dimension="146,49" />
+  <StrutsActivity path="/forms/reservation.jsp" location="2150,1650" dimension="137,49" />
+  <StrutsActivity path="/forms/etatdistribution.jsp" location="2450,2250" dimension="155,49" />
+  <StrutsActivity path="/forms/reservaprov.jsp" location="1550,1750" dimension="141,49" />
+  <StrutsActivity path="/forms/rapportreservation.jsp" location="3350,1350" dimension="173,49" />
+  <StrutsActivity path="/forms/modifreserv.jsp" location="3050,2050" dimension="139,49" />
+  <StrutsActivity path="/forms/list_reservation.jsp" location="2750,1650" dimension="156,49" />
+  <StrutsActivity path="/forms/list_reservation2.jsp" location="3050,2150" dimension="162,49" />
+  <StrutsActivity path="/forms/menuvalider2.jsp" location="950,2450" dimension="146,49" />
+  <StrutsActivity path="/forms/comborecep.jsp" location="1550,2350" dimension="140,49" />
+  <StrutsActivity path="/forms/annuler.jsp" location="3350,1250" dimension="118,49" />
+  <StrutsActivity path="/forms/editraport.jsp" location="930,1605" dimension="130,49" />
+  <StrutsActivity path="/forms/editraport1.jsp" location="675,525" dimension="136,49" />
+  <StrutsActivity path="/forms/envoiePack.jsp" location="1230,1335" dimension="150,100" />
+  <StrutsActivity path="/forms/envoi.jsp" location="1455,1350" dimension="108,49" />
+  <StrutsActivity path="/forms/amina.jsp" location="-210,900" dimension="150,100" />
+  <StrutsActivity path="/forms/activ.jsp" location="690,1260" dimension="150,100" />
+  <StrutsTransition id="/pac.do,pack,/forms/packaging.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1110,944" />
+      <AbsolutePoint location="870,944" />
+      <AbsolutePoint location="870,960" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/stock.do,EtatDeStock,/forms/stock.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="456,765" />
+      <AbsolutePoint location="456,700" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoi.do,envoipac,/forms/envoiePackaging.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1305,1558" />
+      <AbsolutePoint location="1305,1710" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recep3.do,test2,/forms/recep.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="585,149" />
+      <AbsolutePoint location="525,149" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/swapPr.do,confirmWP2,/forms/confirmSwpr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="465,3105" />
+      <AbsolutePoint location="465,3025" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandScr.do,scratch2,/forms/demandScr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="450,2265" />
+      <AbsolutePoint location="450,2200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,listreservation2,/forms/list_reservation2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3227,1938" />
+      <AbsolutePoint location="3227,2174" />
+      <AbsolutePoint location="3212,2174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactive.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="480,930" />
+      <AbsolutePoint location="480,891" />
+      <AbsolutePoint location="-355,891" />
+      <AbsolutePoint location="-355,2746" />
+      <AbsolutePoint location="2975,2746" />
+      <AbsolutePoint location="2975,2352" />
+      <AbsolutePoint location="2590,2352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/approbation.do,listreserv,/forms/listreserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3192,1650" />
+      <AbsolutePoint location="3192,1213" />
+      <AbsolutePoint location="1629,1213" />
+      <AbsolutePoint location="1629,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/stock.do,pophistorique,/forms/pophistorique.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="486,765" />
+      <AbsolutePoint location="486,718" />
+      <AbsolutePoint location="1215,718" />
+      <AbsolutePoint location="1215,783" />
+      <AbsolutePoint location="3616,783" />
+      <AbsolutePoint location="3616,1474" />
+      <AbsolutePoint location="3497,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,listprofil,/forms/listprofil.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="225,235" />
+      <AbsolutePoint location="225,2474" />
+      <AbsolutePoint location="1850,2474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affecDefect.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="390,3320" />
+      <AbsolutePoint location="390,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre.do,modif,/forms/modifacteur.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/receptrans.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1990,694" />
+      <AbsolutePoint location="1990,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/annuler.do,annuler,/forms/annuler.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1381,2538" />
+      <AbsolutePoint location="1381,2636" />
+      <AbsolutePoint location="3671,2636" />
+      <AbsolutePoint location="3671,1274" />
+      <AbsolutePoint location="3468,1274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reservation.do,reserv2,/forms/reservation.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,menu,/forms/menuPrincipal.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="150,185" />
+      <AbsolutePoint location="30,185" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoitrans.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1388,694" />
+      <AbsolutePoint location="1388,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/approbation.do,aprob,/forms/approbation.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3209,1650" />
+      <AbsolutePoint location="3209,1174" />
+      <AbsolutePoint location="2890,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/annuler.do,menu,/forms/menuvalider3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1381,2494" />
+      <AbsolutePoint location="3423,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandPre.do,prepaid,/forms/activPrepaid.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,1622" />
+      <AbsolutePoint location="30,1622" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparReserv.do,reservation,/forms/reservation.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher1.do,listeordre1,/forms/combo1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/nonactivpost.do,nonActiv,/forms/nonActiv.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-114,76" rDim2="165,-5" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparConfirm.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="75,1513" />
+      <AbsolutePoint location="75,2875" />
+      <AbsolutePoint location="2550,2875" />
+      <AbsolutePoint location="2550,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher3.do,combo3,/forms/combo3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,rapportreserv,/forms/rapportreservation.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3323,1894" />
+      <AbsolutePoint location="3395,1894" />
+      <AbsolutePoint location="3395,1635" />
+      <AbsolutePoint location="3269,1635" />
+      <AbsolutePoint location="3269,1374" />
+      <AbsolutePoint location="3350,1374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/discovernaima1.do,naima,/forms/naima.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre.do,reserv,/forms/reserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="488,1450" />
+      <AbsolutePoint location="488,1374" />
+      <AbsolutePoint location="1012,1374" />
+      <AbsolutePoint location="1012,1317" />
+      <AbsolutePoint location="1720,1317" />
+      <AbsolutePoint location="1720,1174" />
+      <AbsolutePoint location="1850,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,login,/forms/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="225,135" />
+      <AbsolutePoint location="225,85" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandScr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="525,2316" />
+      <AbsolutePoint location="576,2316" />
+      <AbsolutePoint location="576,3076" />
+      <AbsolutePoint location="2711,3076" />
+      <AbsolutePoint location="2711,2316" />
+      <AbsolutePoint location="2520,2316" />
+      <AbsolutePoint location="2520,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmScr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="795,2448" />
+      <AbsolutePoint location="2675,2448" />
+      <AbsolutePoint location="2675,2392" />
+      <AbsolutePoint location="2590,2392" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmActiv.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="263,1333" />
+      <AbsolutePoint location="263,1405" />
+      <AbsolutePoint location="1185,1405" />
+      <AbsolutePoint location="1185,1670" />
+      <AbsolutePoint location="1758,1670" />
+      <AbsolutePoint location="1758,2352" />
+      <AbsolutePoint location="2450,2352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordretrans1.do,transfert1,/forms/ordretrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,modifreserv,/forms/modifreserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3174,1938" />
+      <AbsolutePoint location="3174,2050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre1.do,parametrwarehouse,/forms/parametre_warehouse.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2272,2138" />
+      <AbsolutePoint location="2272,2176" />
+      <AbsolutePoint location="3014,2176" />
+      <AbsolutePoint location="3014,1776" />
+      <AbsolutePoint location="3445,1776" />
+      <AbsolutePoint location="3445,2050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre1.do,parametreartcle,/forms/parametre_article.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2326,2050" />
+      <AbsolutePoint location="2326,1635" />
+      <AbsolutePoint location="3239,1635" />
+      <AbsolutePoint location="3239,1575" />
+      <AbsolutePoint location="3350,1575" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmSwpr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="705,2975" />
+      <AbsolutePoint location="705,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,etatdistribution,/forms/etatdistribution.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3244,1938" />
+      <AbsolutePoint location="3244,2217" />
+      <AbsolutePoint location="2527,2217" />
+      <AbsolutePoint location="2527,2250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandPre.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,1640" />
+      <AbsolutePoint location="150,1640" />
+      <AbsolutePoint location="150,3232" />
+      <AbsolutePoint location="2819,3232" />
+      <AbsolutePoint location="2819,2374" />
+      <AbsolutePoint location="2590,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recepackag.do,recepackag1,/forms/recepackag.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmPrepaid.do,CPR,/forms/activationPRE.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,2180" />
+      <AbsolutePoint location="60,2180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recherche.do,recherche,/forms/recherche.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="570,319" />
+      <AbsolutePoint location="475,319" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sortie.do,sortie,/forms/sortie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2002,2250" />
+      <AbsolutePoint location="2002,1414" />
+      <AbsolutePoint location="1751,1414" />
+      <AbsolutePoint location="1751,1125" />
+      <AbsolutePoint location="1604,1125" />
+      <AbsolutePoint location="1604,1099" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/swapPr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="465,3155" />
+      <AbsolutePoint location="465,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactivpost.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-75,1145" />
+      <AbsolutePoint location="-315,1145" />
+      <AbsolutePoint location="-315,3445" />
+      <AbsolutePoint location="2580,3445" />
+      <AbsolutePoint location="2580,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmSwpr.do,confirmWP,/forms/confirmSwpr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,2975" />
+      <AbsolutePoint location="540,2975" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparTest.do,test,/forms/Test.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-30,3005" />
+      <AbsolutePoint location="-105,3005" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparScr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="933,2127" />
+      <AbsolutePoint location="1008,2127" />
+      <AbsolutePoint location="1008,2426" />
+      <AbsolutePoint location="2048,2426" />
+      <AbsolutePoint location="2048,2392" />
+      <AbsolutePoint location="2450,2392" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,listreservation,/forms/list_reservation.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,1884" />
+      <AbsolutePoint location="2971,1884" />
+      <AbsolutePoint location="2971,1674" />
+      <AbsolutePoint location="2906,1674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/swapPo.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-32,2905" />
+      <AbsolutePoint location="-32,2915" />
+      <AbsolutePoint location="1238,2915" />
+      <AbsolutePoint location="1238,1839" />
+      <AbsolutePoint location="2679,1839" />
+      <AbsolutePoint location="2679,2325" />
+      <AbsolutePoint location="2549,2325" />
+      <AbsolutePoint location="2549,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandSwpo.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="60,2523" />
+      <AbsolutePoint location="1171,2523" />
+      <AbsolutePoint location="1171,2805" />
+      <AbsolutePoint location="2520,2805" />
+      <AbsolutePoint location="2520,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher4.do,combo4,/forms/combo4.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2475,1379" />
+      <AbsolutePoint location="2062,1379" />
+      <AbsolutePoint location="2062,1974" />
+      <AbsolutePoint location="2150,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre.do,autoreserv,/forms/autosorti_reserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="360,1538" />
+      <AbsolutePoint location="360,2380" />
+      <AbsolutePoint location="1250,2380" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher2.do,combo2,/forms/combo2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoi.do,pac,/forms/envoiePackaging.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1275,1558" />
+      <AbsolutePoint location="1275,1710" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandSwpo.do,swap2,/forms/demandSwpo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-15,2490" />
+      <AbsolutePoint location="-15,2410" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparConfirm.do,demande,/forms/ConfirmActiv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-47,1425" />
+      <AbsolutePoint location="-47,1345" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/nonactivpost.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="934,1769" />
+      <AbsolutePoint location="1120,1769" />
+      <AbsolutePoint location="1120,3154" />
+      <AbsolutePoint location="1983,3154" />
+      <AbsolutePoint location="1983,2374" />
+      <AbsolutePoint location="2450,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordretrans1.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2892,494" />
+      <AbsolutePoint location="2892,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmPrepaid.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="315,2207" />
+      <AbsolutePoint location="315,2350" />
+      <AbsolutePoint location="2498,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/gestionprofil.do,menu,/forms/menuPrincipal.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2293,2494" />
+      <AbsolutePoint location="-45,185" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre1.do,parametre,/forms/parametre.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2432,2094" />
+      <AbsolutePoint location="2710,2094" />
+      <AbsolutePoint location="2710,1839" />
+      <AbsolutePoint location="3585,1839" />
+      <AbsolutePoint location="3585,1004" />
+      <AbsolutePoint location="2799,1004" />
+      <AbsolutePoint location="2799,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparSwpr.do,swapPr,/forms/demandSwpr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="405,2810" />
+      <AbsolutePoint location="330,2810" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pac.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1231,914" />
+      <AbsolutePoint location="1231,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandSwpr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="255,2975" />
+      <AbsolutePoint location="255,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactive.do,supprimer,/forms/activPost.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-30,112" rDim2="360,115" />
+      <Point rDim1="-210,112" rDim2="180,115" />
+      <Point rDim1="-390,112" rDim2="0,115" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoi.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1356,1514" />
+      <AbsolutePoint location="1356,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparSwpo.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,2360" />
+      <AbsolutePoint location="240,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparStk.do,prepar,/forms/stock.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,659" />
+      <AbsolutePoint location="510,659" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficherecep.do,comborecep,/forms/comborecep.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2875,2338" />
+      <AbsolutePoint location="2875,3475" />
+      <AbsolutePoint location="1620,3475" />
+      <AbsolutePoint location="1620,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autosorti.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="785,2294" />
+      <AbsolutePoint location="785,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoitrans.do,listordretrans,/forms/listordretrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autoreintegr1.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2296,894" />
+      <AbsolutePoint location="2296,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher5.do,combo5,/forms/combo5.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1520,2184" />
+      <AbsolutePoint location="1850,2184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactivpost.do,prePost,/forms/activPost.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="30,1095" />
+      <AbsolutePoint location="30,1030" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparSwpr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="555,2827" />
+      <AbsolutePoint location="1757,2827" />
+      <AbsolutePoint location="1757,2369" />
+      <AbsolutePoint location="2450,2369" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordretrans.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2289,494" />
+      <AbsolutePoint location="2289,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/receptrans.do,listenvoitrans,/forms/listenvoitrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recepackag.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1692,494" />
+      <AbsolutePoint location="1692,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmChargement.do,chargement2,/forms/chargemenScratch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,2600" />
+      <AbsolutePoint location="555,2600" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparPre.do,prepaid,/forms/activPrepaid.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-60,1800" />
+      <AbsolutePoint location="-60,1690" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparDefect.do,defect,/forms/Defect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,3320" />
+      <AbsolutePoint location="690,3320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoitrans.do,envoitrans,/forms/envoitrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre.do,autosorti,/forms/autosorti.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="471,1450" />
+      <AbsolutePoint location="471,1214" />
+      <AbsolutePoint location="1612,1214" />
+      <AbsolutePoint location="1612,1199" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmSwpo.do,confirmWO,/forms/confirmSwpo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,2675" />
+      <AbsolutePoint location="60,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autoreintegr.do,autoreintegr,/forms/autoreintegr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affecTest.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-165,3215" />
+      <AbsolutePoint location="-165,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparRecep.do,preparer1,/forms/recep.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="504,73" />
+      <AbsolutePoint location="504,120" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affecTest.do,test2,/forms/Test.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-165,3165" />
+      <AbsolutePoint location="-165,3055" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recepackag.do,recepackag,/forms/recepackag.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ordretrans.do,transfert,/forms/ordretrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/package.do,package,/forms/packaging.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="900,823" />
+      <AbsolutePoint location="900,960" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reintegr.do,listreintegr,/forms/listautoreintegr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1698,1648" />
+      <AbsolutePoint location="1698,1950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/nonactiv.do,activation,/forms/nonActiv.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-44,-74" rDim2="195,40" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autosorti.do,listaprob,/forms/listaprob.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,2294" />
+      <AbsolutePoint location="600,2294" />
+      <AbsolutePoint location="600,1669" />
+      <AbsolutePoint location="855,1669" />
+      <AbsolutePoint location="855,1275" />
+      <AbsolutePoint location="950,1275" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reintegr.do,reintegr,/forms/reintegr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1560,1620" />
+      <AbsolutePoint location="1335,1620" />
+      <AbsolutePoint location="1335,1950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autosorti.do,auto,/forms/autosorti.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="920,2264" />
+      <AbsolutePoint location="1535,2264" />
+      <AbsolutePoint location="1535,1414" />
+      <AbsolutePoint location="1691,1414" />
+      <AbsolutePoint location="1691,1174" />
+      <AbsolutePoint location="1675,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/envoi.do,essay,/forms/ordre.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1230,1528" />
+      <AbsolutePoint location="1209,1528" />
+      <AbsolutePoint location="1209,1189" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/par.do,reserv,/forms/reserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2911,2050" />
+      <AbsolutePoint location="2911,1605" />
+      <AbsolutePoint location="2465,1605" />
+      <AbsolutePoint location="2465,1174" />
+      <AbsolutePoint location="1963,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactive.do,remplirCombo,/forms/activPost.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-270,-29" rDim2="195,-35" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/approbation.do,menu,/forms/menuvalider3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3335,1694" />
+      <AbsolutePoint location="3464,1694" />
+      <AbsolutePoint location="3464,1989" />
+      <AbsolutePoint location="3320,1989" />
+      <AbsolutePoint location="3320,2374" />
+      <AbsolutePoint location="3350,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmPre.do,demande,/forms/confirmPre.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,2015" />
+      <AbsolutePoint location="45,2015" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/gestionprofil.do,listprofil,/forms/listprofil.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,2514" />
+      <AbsolutePoint location="1909,2514" />
+      <AbsolutePoint location="1909,2499" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/nonactiv.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="883,1964" />
+      <AbsolutePoint location="941,1964" />
+      <AbsolutePoint location="941,3319" />
+      <AbsolutePoint location="2897,3319" />
+      <AbsolutePoint location="2897,2374" />
+      <AbsolutePoint location="2590,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/swapPo.do,confirmWO2,/forms/confirmSwpo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-30,2805" />
+      <AbsolutePoint location="-30,2725" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmSwpo.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,2675" />
+      <AbsolutePoint location="2490,2675" />
+      <AbsolutePoint location="2490,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affectPerdu.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="188,3320" />
+      <AbsolutePoint location="188,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reservation.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3174,1138" />
+      <AbsolutePoint location="3174,1575" />
+      <AbsolutePoint location="2620,1575" />
+      <AbsolutePoint location="2620,2330" />
+      <AbsolutePoint location="2559,2330" />
+      <AbsolutePoint location="2559,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparPerdu.do,perdu,/forms/Perdu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="195,3155" />
+      <AbsolutePoint location="120,3155" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,menu,/forms/menuvalider2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3261,1938" />
+      <AbsolutePoint location="3261,3385" />
+      <AbsolutePoint location="1023,3385" />
+      <AbsolutePoint location="1023,2499" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autosorti.do,autoreserv,/forms/autosorti_reserv.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="920,2294" />
+      <AbsolutePoint location="1331,2294" />
+      <AbsolutePoint location="1331,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparPre.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-135,1850" />
+      <AbsolutePoint location="-135,2397" />
+      <AbsolutePoint location="2450,2397" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficherparametre.do,parametre,/forms/parametre.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3556,2150" />
+      <AbsolutePoint location="3556,1035" />
+      <AbsolutePoint location="2816,1035" />
+      <AbsolutePoint location="2816,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rechedit.do,rech,/forms/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1084,1513" />
+      <AbsolutePoint location="1084,1935" />
+      <AbsolutePoint location="2800,1935" />
+      <AbsolutePoint location="2800,1950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmActiv.do,CPO,/forms/ActivationPO.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-38,91" rDim2="15,-110" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sortie.do,listsortie,/forms/listautosorti.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2092,2250" />
+      <AbsolutePoint location="2092,1379" />
+      <AbsolutePoint location="1811,1379" />
+      <AbsolutePoint location="1811,1125" />
+      <AbsolutePoint location="1936,1125" />
+      <AbsolutePoint location="1936,1099" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparmodif.do,modif,/forms/modifacteur.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listordre.do,essay,/forms/ordre.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1003,1155" />
+      <AbsolutePoint location="1155,1155" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/afficher.do,combo,/forms/combo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactive.do,active,/forms/activPost.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-270,1" rDim2="195,-5" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/stock.do,etat,/forms/popupetatdist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,784" />
+      <AbsolutePoint location="199,784" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recherche1.do,visualiser,/forms/recherche.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="360,425" />
+      <AbsolutePoint location="410,425" />
+      <AbsolutePoint location="410,334" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pac.do,pack2,/forms/packaging.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1110,914" />
+      <AbsolutePoint location="840,914" />
+      <AbsolutePoint location="840,960" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/demandSwpr.do,swapPr2,/forms/demandSwpr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="255,2925" />
+      <AbsolutePoint location="255,2860" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmScr.do,chargement,/forms/confirmScr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="645,2450" />
+      <AbsolutePoint location="555,2450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recepackag.do,envoi,/forms/listenvoip.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autosorti.do,affichaprob,/forms/affichaprob.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="840,2338" />
+      <AbsolutePoint location="840,2565" />
+      <AbsolutePoint location="2650,2565" />
+      <AbsolutePoint location="2650,1674" />
+      <AbsolutePoint location="2587,1674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/annuler.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1381,2494" />
+      <AbsolutePoint location="1381,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sortie.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2104,2325" />
+      <AbsolutePoint location="2489,2325" />
+      <AbsolutePoint location="2489,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparparametre.do,parametr,/forms/addacteur.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3049,1338" />
+      <AbsolutePoint location="3049,1725" />
+      <AbsolutePoint location="1426,1725" />
+      <AbsolutePoint location="1426,2074" />
+      <AbsolutePoint location="1381,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preactive.do,ajouter,/forms/activPost.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-315,46" rDim2="150,40" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/discovernaima.do,naima,/forms/naima.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmPre.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="315,2005" />
+      <AbsolutePoint location="540,2005" />
+      <AbsolutePoint location="540,2342" />
+      <AbsolutePoint location="2485,2342" />
+      <AbsolutePoint location="2485,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affectPerdu.do,perdu2,/forms/Perdu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="113,3320" />
+      <AbsolutePoint location="45,3320" />
+      <AbsolutePoint location="45,3205" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/autoreintegr1.do,auto,/forms/autoreintegr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listreserv.do,reservaprov,/forms/reservaprov.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3186,1850" />
+      <AbsolutePoint location="3186,1814" />
+      <AbsolutePoint location="1620,1814" />
+      <AbsolutePoint location="1620,1799" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/main.do,initial,/forms/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-60,30" />
+      <AbsolutePoint location="135,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/rechedit1.do,rech2,/forms/edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="889,449" />
+      <AbsolutePoint location="1076,449" />
+      <AbsolutePoint location="1076,1005" />
+      <AbsolutePoint location="2129,1005" />
+      <AbsolutePoint location="2129,2023" />
+      <AbsolutePoint location="2800,2023" />
+      <AbsolutePoint location="2800,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/confirmChargement.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="825,2600" />
+      <AbsolutePoint location="2460,2600" />
+      <AbsolutePoint location="2460,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparSwpo.do,swap,/forms/demandSwpo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,2360" />
+      <AbsolutePoint location="60,2360" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/recep3.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="847,149" />
+      <AbsolutePoint location="3699,149" />
+      <AbsolutePoint location="3699,2498" />
+      <AbsolutePoint location="2468,2498" />
+      <AbsolutePoint location="2468,2399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/affecDefect.do,defect2,/forms/Defect.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="465,3320" />
+      <AbsolutePoint location="540,3320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reintegr.do,menu,/forms/menuvalider.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1693,1604" />
+      <AbsolutePoint location="1693,2374" />
+      <AbsolutePoint location="2520,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/receptrans.do,receptrans,/forms/receptrans.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/parametre1.do,acteur,/forms/addacteur.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,2114" />
+      <AbsolutePoint location="1315,2114" />
+      <AbsolutePoint location="1315,2099" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preparScr.do,scratch,/forms/demandScr.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,2129" />
+      <AbsolutePoint location="525,2129" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

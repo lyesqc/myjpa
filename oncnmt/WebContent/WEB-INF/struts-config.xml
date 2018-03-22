@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <form-beans>
+      <form-bean name="recepxlsForm" type="com.yourcompany.struts.form.RecepxlsForm"/>
+    <form-bean name="loginForm" type="com.yourcompany.struts.form.LoginForm"/>
+    
+    <form-bean name="menuForm" type="com.yourcompany.struts.form.MenuForm"/>
+    <form-bean name="rechercheForm" type="com.yourcompany.struts.form.RechercheForm"/>
+    
+    <form-bean name="etaStkForm" type="com.yourcompany.struts.form.EtaStkForm"/>
+    
+    
+    <form-bean name="envoiForm" type="com.yourcompany.struts.form.EnvoiForm"/>
+    <form-bean name="recheditForm" type="com.yourcompany.struts.form.RecheditForm"/>
+    
+    <form-bean name="listenvoipForm" type="com.yourcompany.struts.form.ListenvoipForm"/>
+    
+    <form-bean name="transfertForm" type="com.yourcompany.struts.form.TransfertForm"/>
+    <form-bean name="transfert1Form" type="com.yourcompany.struts.form.Transfert1Form"/>
+    <form-bean name="reintegrForm" type="com.yourcompany.struts.form.ReintegrForm"/>
+    <form-bean name="parametreForm" type="com.yourcompany.struts.form.ParametreForm"/>
+    
+    <form-bean name="parametre1Form" type="com.yourcompany.struts.form.Parametre1Form"/>
+    <form-bean name="sortiForm" type="com.yourcompany.struts.form.SortiForm"/>
+    <form-bean name="returnForm" type="com.yourcompany.struts.form.ReturnForm"/>
+    
+  </form-beans>
+  <action-mappings>
+    
+    
+    <action path="/sort" type="fr.improve.struts.taglib.layout.sort.SortAction" scope="request" validate="false">
+    </action>
+    <action path="/treeview" type="fr.improve.struts.taglib.layout.treeview.TreeviewAction" scope="request" validate="false">
+    </action>
+    <action path="/main" name="loginForm" type="com.yourcompany.struts.action.MainAction" scope="request" attribute="loginForm">
+      <forward name="initial" path="/forms/login.jsp"/>
+    </action>
+    <action path="/login" name="loginForm" type="com.yourcompany.struts.action.LoginAction" scope="request" attribute="loginForm">
+      <forward name="login" path="/forms/login.jsp"/>
+      <forward name="menu" path="/forms/menuPrincipal.jsp"/>
+      <forward name="listprofil" path="/forms/listprofil.jsp"/>
+    </action>
+    <action path="/preparRecep" name="recepForm" type="com.yourcompany.struts.action.PreparRecepAction" scope="session" attribute="recepForm">
+      <forward name="preparer1" path="/forms/recep.jsp"/>
+    </action>
+    <action path="/recherche" name="rechercheForm" type="com.yourcompany.struts.action.RechercheAction" scope="session" attribute="rechercheForm">
+      <forward name="recherche" path="/forms/recherche.jsp"/>
+    </action>
+    <action path="/recherche1" name="rechercheForm" type="com.yourcompany.struts.action.Recherche1Action" scope="session" parameter="hidden" attribute="rechercheForm">
+      <forward name="visualiser" path="/forms/recherche.jsp"/>
+    </action>
+    <action path="/preparStk" name="etaStkForm" type="com.yourcompany.struts.action.PreparStkAction" scope="session" attribute="etaStkForm">
+      <forward name="prepar" path="/forms/stock.jsp"/>
+    </action>
+    <action path="/stock" name="etaStkForm" type="com.yourcompany.struts.action.StockAction" scope="session" parameter="hidden" attribute="etaStkForm">
+      <forward name="EtatDeStock" path="/forms/stock.jsp"/>
+      <forward name="etat" path="/forms/popupetatdist.jsp"/>
+      <forward name="pophistorique" path="/forms/pophistorique.jsp"/>
+    </action>
+    
+   <action path="/envoi" name="envoiForm" type="com.yourcompany.struts.action.EnvoiAction" scope="session" parameter="hidden" attribute="envoiForm">
+      <forward name="envoipac" path="/forms/envoiePackaging.jsp"/>
+      <forward name="essay" path="/forms/ordre.jsp"/>
+      <forward name="pac" path="/forms/envoiePackaging.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+   
+    <action path="/envoitrans" name="transfert1Form" type="com.yourcompany.struts.action.EnvoitransAction" parameter="hidden" attribute="transfert1Form">
+      <forward name="envoitrans" path="/forms/envoitrans.jsp"/>
+      <forward name="listordretrans" path="/forms/listordretrans.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    <action path="/receptrans" name="transfert1Form" type="com.yourcompany.struts.action.ReceptransAction" scope="session" parameter="hidden" attribute="transfert1Form">
+      <forward name="listenvoitrans" path="/forms/listenvoitrans.jsp"/>
+      <forward name="receptrans" path="/forms/receptrans.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    <action path="/afficher1" name="transfert1Form" type="com.yourcompany.struts.action.Afficher1Action" scope="session" attribute="transfert1Form">
+      <forward name="listeordre1" path="/forms/combo1.jsp"/>
+    </action>
+    
+    
+    <action path="/afficher2" name="reintegrForm" type="com.yourcompany.struts.action.Afficher2Action" scope="session" attribute="reintegrForm">
+      <forward name="combo2" path="/forms/combo2.jsp"/>
+    </action>
+    <action path="/reintegr" name="reintegrForm" type="com.yourcompany.struts.action.ReintegrAction" scope="session" parameter="hidden" attribute="reintegrForm">
+      <forward name="listreintegr" path="/forms/listautoreintegr.jsp"/>
+      <forward name="reintegr" path="/forms/reintegr.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    <action path="/afficher3" name="envoiForm" type="com.yourcompany.struts.action.Afficher3Action" attribute="envoiForm">
+      <forward name="combo3" path="/forms/combo3.jsp"/>
+    </action>
+    <action path="/afficher4" name="envoipackagForm" type="com.yourcompany.struts.action.Afficher4Action" attribute="envoipackagForm">
+      <forward name="combo4" path="/forms/combo4.jsp"/>
+    </action>
+    <action path="/afficher" name="transfert1Form" type="com.yourcompany.struts.action.AfficherAction" attribute="transfert1Form">
+      <forward name="combo" path="/forms/combo.jsp"/>
+    </action>
+    <action path="/rechedit" name="recheditForm" type="com.yourcompany.struts.action.RecheditAction" scope="request" attribute="recheditForm">
+      <forward name="rech" path="/forms/edit.jsp"/>
+    </action>
+    <action path="/rechedit1" name="recheditForm" type="com.yourcompany.struts.action.Rechedit1Action" scope="request" parameter="hidden" attribute="recheditForm">
+      <forward name="rech2" path="/forms/edit.jsp"/>
+    </action>
+    
+    <action path="/preparmodif" name="parametreForm" type="com.yourcompany.struts.action.PreparmodifAction" scope="request" attribute="parametreForm">
+      <forward name="modif" path="/forms/modifacteur.jsp"/>
+    </action>
+    <action path="/preparparametre" name="parametre1Form" type="com.yourcompany.struts.action.PreparparametreAction" scope="session" attribute="parametre1Form">
+      <forward name="parametr" path="/forms/addacteur.jsp"/>
+    </action>
+    <action path="/parametre1" name="parametre1Form" type="com.yourcompany.struts.action.Parametre1Action" scope="session" parameter="hidden" attribute="parametre1Form">
+      <forward name="acteur" path="/forms/addacteur.jsp"/>
+      <forward name="parametre" path="/forms/parametre.jsp"/>
+      <forward name="parametreartcle" path="/forms/parametre_article.jsp"/>
+      <forward name="parametrwarehouse" path="/forms/parametre_warehouse.jsp"/>
+    </action>
+    
+      <action path="/afficherparametre" name="parametre1Form" type="com.yourcompany.struts.action.AfficherparametreAction" attribute="parametre1Form">
+      <forward name="parametre" path="/forms/parametre.jsp"/>
+    </action>
+    <action path="/gestionprofil" name="loginForm" type="com.yourcompany.struts.action.GestionprofilAction" parameter="hidden" attribute="loginForm">
+      <forward name="listprofil" path="/forms/listprofil.jsp"/>
+      <forward name="menu" path="/forms/menuPrincipal.jsp"/>
+    </action>
+    <action path="/rapport_global" name="etaStkForm" type="com.yourcompany.struts.action.Rapport_globalAction" scope="session" parameter="hidden" attribute="etaStkForm">
+      <forward name="rapportglobal" path="/forms/popup_rapport_global.jsp"/>
+      <forward name="rapportreservation" path="/forms/rapportreservationglobal.jsp"/>
+    </action>
+    <action path="/naima" name="etaStkForm" type="com.yourcompany.struts.action.NaimaAction" scope="session" attribute="etaStkForm">
+      <forward name="naima" path="/forms/naima2.jsp"/>
+    </action>
+    <action  name="recepxlsForm" path="/recepxls" scope="session" parameter="hidden" type="com.yourcompany.struts.action.RecepxlsAction" attribute="recepxlsForm">
+  
+  <forward name="recep" path="/forms/recep.jsp"/>
+  <forward name="menu" path="/forms/menuvalider.jsp"/>
+  
+    </action>
+    
+    <action path="/sortie" name="sortiForm" type="com.yourcompany.struts.action.SortieAction" parameter="hidden" attribute="sortiForm">
+      <forward name="listsortie" path="/forms/listautosorti.jsp"/>
+      <forward name="sortie" path="/forms/sortieXls.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    
+    <action path="/transfert" name="transfertForm" type="com.yourcompany.struts.action.TransfertAction" parameter="hidden" attribute="transfertForm" >
+      
+      <forward name="transfert" path="/forms/transfertXls.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    
+     <action path="/reint" name="sortiForm" type="com.yourcompany.struts.action.Reint" parameter="hidden" attribute="sortiForm">
+      <forward name="auto" path="/forms/reint.jsp"/>
+      <forward name="listaprob" path="/forms/listaprob.jsp"/>
+      <forward name="affichaprob" path="/forms/affichaprob.jsp"/>
+      <forward name="autoreserv" path="/forms/autosorti_reserv.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    
+    <action path="/return" name="returnForm" type="com.yourcompany.struts.action.Return" parameter="hidden" attribute="returnForm">
+      <forward name="auto" path="/forms/return.jsp"/>
+      <forward name="listaprob" path="/forms/listaprob.jsp"/>
+      <forward name="affichaprob" path="/forms/affichaprob.jsp"/>
+      <forward name="autoreserv" path="/forms/autosorti_reserv.jsp"/>
+      <forward name="menu" path="/forms/menuvalider.jsp"/>
+    </action>
+    
+  </action-mappings>
+  <controller>
+    <set-property property="processorClass" value="com.yourcompany.struts.action.MyRequestProcessor"/>
+  </controller>
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources"/>
+  <plug-in id="converter" className="com.yourcompany.struts.StrutsBootstrapPlugin"/>
+</struts-config>
