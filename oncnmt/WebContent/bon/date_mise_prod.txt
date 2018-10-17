@@ -1,1 +1,0 @@
-date_de_mise_en_production=07/04/2010
