@@ -1,0 +1,13 @@
+2018-03-01 11:49:37 INFO  ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@442d9b6e: startup date [Thu Mar 01 11:49:37 WAT 2018]; root of context hierarchy
+2018-03-01 11:49:37 INFO  XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [myhibernatebeans.xml]
+2018-03-01 11:49:38 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [application.properties]
+2018-03-01 11:49:38 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2018-03-01 11:49:38 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-01 11:49:38 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2018-03-01 11:49:38 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-01 11:49:38 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-01 11:49:39 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-03-01 11:49:39 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-01 11:49:39 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-01 11:49:39 INFO  HibernateTransactionManager:342 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@7b8233cd] of Hibernate SessionFactory for HibernateTransactionManager
+2018-03-01 11:49:40 INFO  AppMain:23 - It is Interceptor Logger : 
