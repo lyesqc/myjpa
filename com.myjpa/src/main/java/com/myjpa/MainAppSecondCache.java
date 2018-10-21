@@ -18,7 +18,7 @@ public class MainAppSecondCache {
 		SessionFactory sessionFactory =  myservice.mySessionFact();
 		Statistics stat = sessionFactory.getStatistics();
 		stat.setStatisticsEnabled(true);
-		displayStat(stat,"0");
+		displayStat(stat,"000");
 		Commite comite= myservice.getCommiteById(1);
 		System.out.println("Commite is "+comite.getName());
 		displayStat(stat,"1");
