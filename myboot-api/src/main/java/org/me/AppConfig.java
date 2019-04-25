@@ -18,6 +18,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import org1.me.MVCconfigAn;
 
+
+/**
+ * 
+ * @author Lyes.BENSAADA
+ *
+ */
+/*
+ * Change C
+ */
 @SpringBootApplication
 
 // this is facultatif because springbootapplication config class is in root package
